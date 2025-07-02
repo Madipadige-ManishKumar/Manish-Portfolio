@@ -56,9 +56,7 @@ const Projects = () => {
             <div className="card-icon">{project.icon}</div>
             <h3 className="card-title">{project.title}</h3>
             <p className="card-content">{project.description}</p>
-            
-              Learn More
-            </a>
+          
           </div>
         ))}
       </div>
