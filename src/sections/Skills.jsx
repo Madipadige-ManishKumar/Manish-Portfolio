@@ -18,6 +18,8 @@ const Skills = () => {
     { image: '/images/python.png', text: 'Python' },
     { image: '/images/sklearn.png', text: 'Sklearn' },
     { image: '/images/tf.png', text: 'TensorFlow' },
+     { image: '/images/react.png', text: 'React Js' },
+     { image: '/images/mongodb.png', text: 'Mongodb' },
   ]
   return (
     <div>
