@@ -1,0 +1,12 @@
+.HeroContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  text-align: center;
+  font-size: 4rem; /* Large font size */
+  font-weight: bold; /* Bold text */
+  margin: 0;
+  color:white
+  
+}
