@@ -50,9 +50,9 @@ const Projects = () => {
         </p>
       </div>
 
-      <div className="cards-grid">
+      <div className="cards-grid ">
         {projects.map((project, index) => (
-          <div className="card" key={index}>
+          <div className="card cursor-target" key={index}>
             <div className="card-icon">{project.icon}</div>
             <h3 className="card-title">{project.title}</h3>
             <p className="card-content">{project.description}</p>

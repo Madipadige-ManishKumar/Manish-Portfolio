@@ -6,13 +6,16 @@ import SplashCursor from './blocks/Animations/SplashCursor/SplashCursor.jsx'
 import DotGrid from './blocks/Backgrounds/DotGrid/DotGrid.jsx'
 import LetterGlitch from './blocks/Backgrounds/LetterGlitch/LetterGlitch.jsx'
 import ClickSpark from './blocks/Animations/ClickSpark/ClickSpark.jsx'
+import TargetCursor from './blocks/Animations/TargetCursor/TargetCursor.jsx'
+
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+  <TargetCursor/>  
  <DotGrid/>
- 
       <App />
+  
       
   </StrictMode>,
 )

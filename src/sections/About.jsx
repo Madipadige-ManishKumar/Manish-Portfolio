@@ -15,15 +15,15 @@ const About = () => {
         <GradientText  children="About Me"/>
         </div>
         <div className='subcontainer'>
-          <div  className='left'>
-        <ProfileCard  avatarUrl="avatar.jpg"  name='Manish ' title='Student' handle='manish'  showUserInfo={true}  onContactClick={handleevent} contactText="Contact" />
+          <div  className='left cursor-target'>
+        <ProfileCard   avatarUrl="avatar.jpg"  name='Manish ' title='Student' handle='manish'  showUserInfo={true}  onContactClick={handleevent} contactText="Contact" />
         </div>
         <div className='right'>
        
           <section className="about-section">
       
 
-      <div className="cards-grid">
+      <div className="cards-grid cursor-target">
         <div className="card hero-card">
           <h3 className="card-title">Hi, I'm Manish 👋</h3>
           <p className="card-content">
@@ -32,7 +32,7 @@ const About = () => {
           
         </div>
 
-       <div className="card hero-card">
+       <div className="card hero-card cursor-target">
           <h3 className="card-title">🚀Academic Achievements </h3>
           
            <ul className="card-content">
