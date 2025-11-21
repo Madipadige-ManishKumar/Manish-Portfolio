@@ -8,35 +8,35 @@ const projects = [
     icon: "🧠",
     description:
       "AIHealthPro is an innovative disease prediction platform that uses ML algorithms to analyze health conditions based on everyday questions.",
-    link: "AIhealthpro.html",
+    link: "https://github.com/Madipadige-ManishKumar/AIHealthpro",
   },
   {
     title: "Free Broker",
     icon: "🏠",
     description:
       "A real estate platform connecting buyers and sellers with location-based search and predictive analytics for hot properties.",
-    link: "freebroker.html",
+    link: "https://github.com/Madipadige-ManishKumar/Free_broker",
   },
   {
     title: "PDF Summarizer",
     icon: "📄",
     description:
       "A smart web app that generates summaries from PDFs and answers questions using Hugging Face transformer models.",
-    link: "pdf-sum.html",
+    link: "https://github.com/Madipadige-ManishKumar/PDF-summarizer",
   },
   {
-    title: "Hug Mind",
+    title: "Responsive React Portfolio ",
     icon: "👨‍💼",
     description:
-      "an intelligent system that generates text, images, and answers visual questions based on user queries, providing a seamless multimodal AI experience",
-    link: "ems.html",
+      "a personal portfolio website using React.js with smooth animations and a futuristic dark-themed UI.100% responsive design . Deployed on Vercel, enabling scalable hosting for continuous update",
+    link: "https://github.com/Madipadige-ManishKumar/Manish-Portfolio.git",
   },
    {
     title: "BirdSense",
     icon: "👨‍💼",
     description:
       "A deep learning-based model that identifies bird species from their sounds, enabling automated acoustic bird monitoring",
-    link: "ems.html",
+    link: "https://github.com/Madipadige-ManishKumar/Bird_Detection_Using_Sound.git",
   },
 ]
 
@@ -65,5 +65,6 @@ const Projects = () => {
     </section>
   )
 }
+
 
 export default Projects
