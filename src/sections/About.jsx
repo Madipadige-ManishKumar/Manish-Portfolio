@@ -1,73 +1,140 @@
-import React from 'react'
-import GradientText from '../blocks/TextAnimations/GradientText/GradientText'
-import '../stylesheets/About.css'
-
-import ProfileCard from '../blocks/Components/ProfileCard/ProfileCard'
+import React, { useEffect, useRef } from "react";
+import GradientText from "../blocks/TextAnimations/GradientText/GradientText";
+import "../stylesheets/About.css";
 
 const About = () => {
-  const handleevent = () => {
-  window.location.href = 'https://www.linkedin.com/in/manish-kumar-madipadige/';
-};
+  const fadeRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    fadeRefs.current.forEach((el) => el && observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  const addFadeRef = (el) => {
+    if (el && !fadeRefs.current.includes(el)) {
+      fadeRefs.current.push(el);
+    }
+  };
 
   return (
-    <div  className='contanier'>
-      <div className='Heading'>
-        <GradientText  children="About Me"/>
-        </div>
-        <div className='subcontainer'>
-          <div  className='left cursor-target'>
-        <ProfileCard   avatarUrl="avatar.jpg"  name='Manish ' title='Student' handle='manish'  showUserInfo={true}  onContactClick={handleevent} contactText="Contact" />
-        </div>
-        <div className='right'>
-       
-          <section className="about-section">
-      
+    <section className="about-container">
+      {/* Heading */}
+      <div className="heading fade-up" ref={addFadeRef}>
+        <GradientText>About Me</GradientText>
+      </div>
 
-      <div className="cards-grid cursor-target">
-        <div className="card hero-card">
-          <h3 className="card-title">Hi, I'm Manish 👋</h3>
-          <p className="card-content">
-           I'm a full-stack developer with a strong passion for solving real-world problems through clean, efficient, and scalable code. I specialize in building responsive, high-performance web applications using modern technologies like React, Node.js, and Tailwind CSS. I’m also deeply interested in Machine Learning and Deep Learning, leveraging tools like TensorFlow and scikit-learn to build intelligent systems that learn from data and make impactful decisions.
-          </p>
-          
-        </div>
+      <div className="terminal-wrapper">
+        <aside className="terminal-card fade-up" ref={addFadeRef}>
+          {/* Terminal Header */}
+          <div className="terminal-header fade-up" ref={addFadeRef}>
+            <div className="terminal-dots">
+              <span className="dot red" />
+              <span className="dot yellow" />
+              <span className="dot green" />
+            </div>
+            <span className="terminal-title">bash</span>
+          </div>
 
-       <div className="card hero-card cursor-target">
-          <h3 className="card-title">🚀Academic Achievements </h3>
-          
-           <ul className="card-content">
-  <li>
-    Secured a <strong>perfect 10.0 GPA</strong> in S.S.C. from Dilsuknagar Public School.
-  </li>
-  <li>
-    Achieved an <strong> Rank of 1371</strong> in the POLYCET-2021 examination.
-  </li>
-  <li>
-    Graduated with a <strong>CGPA of 9.7</strong> in Diploma (Computer Science Engineering) from Government Polytechnic Hyderabad (Masab Tank).
-  </li>
-  <li>
-    Ranked <strong>31st in the  ECET-2024</strong> at the state level.
-  </li>
-  <li>
-    Admitted into <strong>CBIT</strong>, one of the top engineering institutes in Telangana, for B.E. in Computer Science.
-  </li>
-</ul>
+          {/* Terminal Body */}
+          <div className="terminal-body">
+            <p className="cmd fade-up" ref={addFadeRef}>
+              <span className="prompt">$</span> whoami
+            </p>
+            <p className="output indent fade-up" ref={addFadeRef}>
+              Manish Kumar Madipadige
+            </p>
 
-          
-        </div>
+            <p className="cmd fade-up" ref={addFadeRef}>
+              <span className="prompt">$</span> cat about.txt
+            </p>
+            <p className="output indent fade-up" ref={addFadeRef}>
+              Full-Stack Developer building MERN stack applications with Tailwind
+              CSS, delivering responsive, production-grade interfaces with
+              optimized performance.
+            </p>
+            <p className="output indent fade-up" ref={addFadeRef}>
+              Developed 20+ full-stack applications with REST APIs,
+              authentication, and MongoDB/Express/React/Node.js backend.
+            </p>
 
+            <p className="output indent strong fade-up" ref={addFadeRef}>
+              Machine Learning Focus
+            </p>
+            <p className="output indent fade-up" ref={addFadeRef}>
+              Building ML/DL models using TensorFlow and scikit-learn:
+            </p>
+            <p className="output indent bullet fade-up" ref={addFadeRef}>
+              • ML models achieving up to 90% accuracy/F1.
+            </p>
+            <p className="output indent bullet fade-up" ref={addFadeRef}>
+              • Data preprocessing, feature engineering, tuning.
+            </p>
+            <p className="output indent bullet fade-up" ref={addFadeRef}>
+              • Integrated ML inference into web apps.
+            </p>
+
+            <p className="cmd fade-up" ref={addFadeRef}>
+              <span className="prompt">$</span> cat programming_skills.txt
+            </p>
+            <p className="output indent fade-up" ref={addFadeRef}>
+              JavaScript, Python, Java, C++, C
+            </p>
+
+            <p className="cmd fade-up" ref={addFadeRef}>
+              <span className="prompt">$</span> cat frontend_skills.txt
+            </p>
+            <p className="output indent fade-up" ref={addFadeRef}>
+              HTML, CSS, React.js, Tailwind CSS, GSAP, Bootstrap
+            </p>
+
+            <p className="cmd fade-up" ref={addFadeRef}>
+              <span className="prompt">$</span> cat backend_skills.txt
+            </p>
+            <p className="output indent fade-up" ref={addFadeRef}>
+              Flask, FastAPI, Express.js, Node.js
+            </p>
+
+            <p className="cmd fade-up" ref={addFadeRef}>
+              <span className="prompt">$</span> cat databases.txt
+            </p>
+            <p className="output indent fade-up" ref={addFadeRef}>
+              SQLite, Oracle, MySQL, MongoDB, Firebase
+            </p>
+
+            <p className="cmd fade-up" ref={addFadeRef}>
+              <span className="prompt">$</span> cat ml_frameworks.txt
+            </p>
+            <p className="output indent fade-up" ref={addFadeRef}>
+              Scikit-learn, TensorFlow
+            </p>
+
+            <p className="cmd fade-up" ref={addFadeRef}>
+              <span className="prompt">$</span> cat tools.txt
+            </p>
+            <p className="output indent fade-up" ref={addFadeRef}>
+              Git, GitHub, Hugging Face, OpenRouter
+            </p>
+
+            <p className="cmd fade-up" ref={addFadeRef}>
+              <span className="prompt">$</span>
+            </p>
+          </div>
+        </aside>
       </div>
     </section>
+  );
+};
 
-
-       
-      </div>
-    
-        
-        
-        </div>
-    </div>
-  )
-}
-
-export default About
+export default About;

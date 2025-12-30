@@ -12,7 +12,7 @@ import TargetCursor from './blocks/Animations/TargetCursor/TargetCursor.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
- <DotGrid/>
+ 
       <App />
   
       

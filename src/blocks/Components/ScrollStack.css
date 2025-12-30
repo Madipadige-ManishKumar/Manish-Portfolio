@@ -1,0 +1,58 @@
+/* Scroll Container */
+.scroll-stack-scroller {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: visible;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: scroll-position;
+  background-color: #111; /* dark background for black & white theme */
+}
+
+/* Inner Container */
+.scroll-stack-inner {
+  padding: 20vh 5rem 50rem;
+  min-height: 100vh;
+}
+
+/* Individual Card Wrapper (optional) */
+.scroll-stack-card-wrapper {
+  position: relative;
+}
+
+/* Card Styles */
+.scroll-stack-card {
+  transform-origin: top center;
+  will-change: transform, filter;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+
+  background: #fff; /* white card */
+  color: #111; /* dark text */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); /* subtle black shadow */
+  height: 20rem;
+  width: 100%;
+  margin: 30px 0;
+  padding: 3rem;
+  border-radius: 30px;
+  box-sizing: border-box;
+  border: 1px solid #ccc; /* subtle outline */
+  
+  /* Performance optimizations */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  position: relative;
+  transition: transform 0.3s ease, filter 0.3s ease; /* smooth scale/blur transitions */
+}
+
+/* End Spacer */
+.scroll-stack-end {
+  width: 100%;
+  height: 1px;
+  background: transparent;
+}

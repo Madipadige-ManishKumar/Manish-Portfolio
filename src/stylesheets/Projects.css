@@ -1,86 +1,141 @@
-/* src/components/Projects.css */
+.projects-swipe {
+  width: 100%;
+  padding: 5rem 1rem;
+  background: #000;
+  font-family: 'Press Start 2P', monospace;
+}
 
-.about-section {
-  max-width: 1200px;
+.timeline-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 3rem 1rem;
+  padding: 2rem 0;
 }
 
-.section-header {
-  text-align: center;
-  margin-bottom: 3rem;
-  color: white;
+.timeline-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: #22c55e; /* central line color */
 }
 
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  background: linear-gradient(45deg, #fff, #38bdf8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* Project wrapper */
+.project-wrapper {
+  position: relative;
+  width: 50%;
+  padding: 1rem 2rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.section-subtitle {
-  font-size: 1.1rem;
-  color: #cbd5e1;
-  max-width: 600px;
-  margin: 0 auto;
+/* Left / Right positioning */
+.project-wrapper.left {
+  left: 0;
+  text-align: right;
 }
 
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+.project-wrapper.right {
+  left: 50%;
+  text-align: left;
 }
 
-.card {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(16px);
+/* Show animation */
+.project-wrapper.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Timeline dot */
+.timeline-dot {
+  position: absolute;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  background: #22c55e;
+  border: 2px solid #000;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 0.6s ease-out;
+}
+
+/* Dot positioning */
+.project-wrapper.left .timeline-dot {
+  right: -10px; /* near the central line */
+}
+
+.project-wrapper.right .timeline-dot {
+  left: -10px; /* near the central line */
+}
+
+.project-wrapper.visible .timeline-dot {
+  transform: scale(1);
+}
+
+/* Card styling */
+.project-card {
+  background: #000;
+  border: 2px solid #22c55e;
   padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
-  transition: 0.3s ease;
-  color: white;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card-icon {
-  font-size: 2rem;
-  background: linear-gradient(135deg, #38bdf8, #6366f1);
-  border-radius: 0.75rem;
-  padding: 0.75rem;
+  border-radius: 10px;
   display: inline-block;
-  margin-bottom: 1rem;
 }
 
+.project-description {
+  color: #fff;
+  font-size: 10px;
+  margin-top: 0.5rem;
+  text-shadow: 1px 1px #000;
+}
+
+/* Pixel styling for title and button */
 .card-title {
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 14px;
+  color: #22c55e;
+  text-shadow: 2px 2px #000;
   margin-bottom: 1rem;
-}
-
-.card-content {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  color: #e2e8f0;
 }
 
 .cta-button {
-  background: white;
-  color: #1e3a8a;
-  padding: 0.75rem 1.5rem;
-  border-radius: 999px;
-  font-weight: 600;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  color: #000;
+  background: #22c55e;
+  padding: 5px 10px;
+  border: 2px solid #000;
   text-decoration: none;
-  transition: 0.3s;
+  display: inline-block;
+  text-transform: uppercase;
+  box-shadow: 2px 2px #000;
+  transition: all 0.2s ease, transform 0.2s ease;
 }
 
 .cta-button:hover {
-  background: #e0f2fe;
+  background: #ff00ff;
+  box-shadow: 1px 1px #000;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .project-wrapper,
+  .project-wrapper.left,
+  .project-wrapper.right {
+    width: 100%;
+    left: 0 !important;
+    text-align: center !important;
+    padding: 1rem 0.5rem;
+  }
+
+  .timeline-dot {
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) scale(0);
+  }
 }

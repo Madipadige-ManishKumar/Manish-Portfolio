@@ -9,23 +9,29 @@ import Skills from './sections/Skills'
 import { Projector } from 'three/examples/jsm/Addons.js'
 import Projects from './sections/Projects'
 import Contact from './sections/Contact'
+import ScrollStack, { ScrollStackItem }  from './blocks/Components/ScrollStack.jsx'
+import DotGrid from './blocks/Backgrounds/DotGrid/DotGrid.jsx'
 
 
 
 function App() {
   return (
-    <>
+    <div className="App" >
+    
  <Hero/>
-
+{/* 
  <div className='scroller'>
  <ScrollVelocity texts={["","Web Devlopment ★ Machine Learning ★ Deep Learning ★ Problem Solving "]}/>
- </div>
- 
+ </div> */}
+ {/* <DotGridd/> */}
+
  <About />
- <Skills/>
+ {/* <Skills/> */}
  <Projects />
+<div className='next-section'></div>
+
  <Contact/>
-   </>
+   </div>
   )
 }
 
