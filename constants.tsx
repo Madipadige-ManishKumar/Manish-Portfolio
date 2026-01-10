@@ -1,5 +1,4 @@
 
-import './assets/AIHealthPro.png'
 import { Project, Skill, Experience, Certificate } from './types';
 export const PROJECTS: Project[] = [
     {
