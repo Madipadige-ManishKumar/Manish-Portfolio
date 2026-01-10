@@ -56,7 +56,7 @@ export const PROJECTS: Project[] = [
       ' Implemented ML algorithms (Logistic Regression, Decision Trees, SVM) to predict diabetes, lung, liver, and blood pressure conditions, achieving Engineered a Flask-based web application',
     tags: ['Python', 'Machine Learning', 'Flask', 'Scikit-learn'],
     link: 'https://github.com/Madipadige-ManishKumar/AIHealthpro',
-    imageUrl: './assets/AIhealthPro.png',
+    imageUrl: './assets/AIhealthpro.png',
   },
 
 ];
