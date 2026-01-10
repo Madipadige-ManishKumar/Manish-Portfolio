@@ -146,7 +146,7 @@ const App: React.FC = () => {
               onClick={() => navigateTo(Section.Home)}
             >
                <div className="w-8 h-8 bg-red-600 pixel-border"></div>
-               <span className="text-xs sm:text-sm text-white uppercase">MARIO.IO</span>
+               <span className="text-xs sm:text-sm text-white uppercase">MANISH.IO</span>
             </motion.div>
             <div className="flex gap-4 sm:gap-8 text-[10px] sm:text-xs">
               {Object.values(Section).map((s) => (
@@ -219,8 +219,8 @@ const App: React.FC = () => {
                 <button onClick={() => navigateTo(Section.About)} className="px-6 py-3 bg-[#40445a] text-white text-[10px] pixel-border hover:bg-[#4c5265] active:translate-y-1 transition-all">
                   START GAME
                 </button>
-                <button onClick={() => navigateTo(Section.About)} className="px-6 py-3 border-4 border-[#3d3e51] text-[10px] hover:bg-[#323949] active:translate-y-1 transition-all">
-                  contact
+                <button onClick={() => navigateTo('contact')} className="px-6 py-3 border-4 border-[#3d3e51] text-[10px] hover:bg-[#323949] active:translate-y-1 transition-all">
+                  Contact Me  →
                 </button>
               </motion.div>
             </motion.section>
@@ -386,7 +386,7 @@ const App: React.FC = () => {
       </main>
 
       {/* Footer Decoration */}
-      <footer className="h-24 bg-[#323949] border-t-8 border-[#40445a] relative flex items-center justify-center overflow-hidden">
+      <footer id="contact"className="h-24 bg-[#323949] border-t-8 border-[#40445a] relative flex items-center justify-center overflow-hidden">
       
       {/* Decorative pixel background */}
       <div className="absolute inset-0 flex gap-12 opacity-30 justify-center items-center pointer-events-none">
