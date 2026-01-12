@@ -184,5 +184,11 @@ export const CERTIFICATES: Certificate[] = [
     issuer: 'Google Cloud',
     date: 'Aug 2025',
     link: 'https://www.skills.google/public_profiles/8a1a9c23-f603-4d35-b00b-455be16425f8/badges/10344702'
+  },
+  {
+    name: 'Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate',
+    issuer: 'Oracle',
+    date: 'Jan 2026',
+    link: 'https://drive.google.com/file/d/1MNMPNAfh47dApKnP0oPU9CID6s7rIDiZ/view?usp=sharing'
   }
 ];
