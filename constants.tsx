@@ -104,6 +104,12 @@ export const SKILLS: Skill[] = [
 
 
 export const EXPERIENCES: Experience[] = [
+     {
+    company: 'RedShotLabs',
+    role: 'AI/ML Engineer',
+    period: 'Feb 2025 - May2025',
+    description: 'Built an autonomous multi-agent Slack bot using Gemini 2.5 Flash with RAG-based thread context for channel management, summarization, GitHub orchestration, and accurate contextual replies.'
+  },
   {
     company: 'Hacktoberfest',
     role: 'Contributor',
